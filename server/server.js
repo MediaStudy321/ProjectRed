@@ -8,24 +8,24 @@ const viewPath = path.join(clientPath,'/views/');
 
 const app = express();
 
-app.set ('view engine','ejs');
-app.set ('views', viewPath);
+// app.set ('view engine','ejs');
+// app.set ('views', viewPath);
 
-app.get ('/', function (req, res){
-    res.render('index');
-});
+// app.get ('/', function (req, res){
+//     res.render('index');
+// });
 
-app.get ('/about', function (req, res){
-    res.render('about');
-});
+// app.get ('/about', function (req, res){
+//     res.render('about');
+// });
 
-app.get ('/game', function (req, res){
-    res.render('game');
-});
+// app.get ('/game', function (req, res){
+//     res.render('game');
+// });
 
-app.get ('/profile', function (req, res){
-    res.render('profile');
-});
+// app.get ('/profile', function (req, res){
+//     res.render('profile');
+// });
 
 app.use(express.static(staticPath));
 
