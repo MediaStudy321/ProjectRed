@@ -50,7 +50,10 @@ li.nav {
     color: white;
     text-decoration: none;
  }
-
+#backgroundindex {
+width: 100%;
+background-image:url"https://virtualgallery2-293846.c.cdn77.org/image.php?idO=130685&m=2&mode=z";
+}
 /* Profile */
 
 
