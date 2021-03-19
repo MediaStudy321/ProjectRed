@@ -1,64 +1,104 @@
-* {margin:0; padding: 0; }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-body{
-    background-color: bisque;
-    text-align: center;
-    font: 11px sans-serif;
+body {
+  background-color: white;
+  font: 11px sans-serif;
 }
-h1{
-    font-size: 22px sans-serif;
-    color:black;
+h1 {
+  font-size: 22px sans-serif;
+  color: black;
 }
-h2{
-    font-size: 18px sans-serif;
-    color:black;
+h2 {
+  font-size: 18px sans-serif;
+  color: black;
 }
-h3{
-    font-size: 14px sans-serif;
-    color:black;
-
+h3 {
+  font-size: 14px sans-serif;
+  color: black;
 }
-p{
-    font: 11px sans-serif;
-    color:black;
+p {
+  font: 11px sans-serif;
+  color: black;
 }
-.button{
-    background-color: white;
-    font-size: 11px;
+.button {
+  background-color: white;
+  font-size: 11px;
 }
-a{
-    color: white;
-    text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
 #navbar {
-    position: relative;
-    float: right;
-    width: 750px;
-    height: 100px;
+padding-top: 7px;
+  left: 5%;
+  width: 1000px;
+  height: 77px;
 }
 
 li.nav {
-    position: relative;
-    font-family: sans-serif;
-    font-size:15px;
-    white-space: nowrap;
-    display: inline;
-    list-style-type: none;
- }
- li.nav a {
-    color: white;
-    text-decoration: none;
- }
-#backgroundindex {
-width: 100%;
-background-image:url"https://virtualgallery2-293846.c.cdn77.org/image.php?idO=130685&m=2&mode=z";
+  position: relative;
+  font-family: sans-serif;
+  font-size: 2rem;
+  margin-left: 40px;
+  white-space: nowrap;
+  display: inline;
+  list-style-type: none;
 }
+li.nav a {
+  color: white;
+  text-decoration: none;
+  -webkit-text-stroke: 0.5px black;
+  color: white;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#container {
+    text-align: center;
+    background-color: blue;
+  }
+
+  #stack {
+    text-align: center;
+    margin-top: 10px;
+  }
+  #center {
+    text-align: center;
+    margin-top: 10px;
+  }
+
 /* Profile */
+#profiletop {
+  width: 100%;
+  height: 50px;
+  background-color: yellow;
+}
+#divider {
+    width: 100%;
+    height: 5px;
+    background-color: black;
+  }
 
-
+#split {
+  display: flex;
+  justify-content: space-between;
+}
+#box {
+  width: 1000px;
+  border: 5px solid lightgray;
+  min-height: 800px;
+  max-height: auto;
+}
+#content {
+  width: 100%;
+  min-height: 800px;
+  max-height: auto;
+  background-color: blue;
+}
 
 /* About */
-
 
 /* Game */
