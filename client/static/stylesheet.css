@@ -67,14 +67,16 @@ li.nav a {
   }
   #center {
     text-align: center;
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
 /* Profile */
 #profiletop {
   width: 100%;
   height: 50px;
-  background-color: yellow;
+  background-color: red;
 }
 #divider {
     width: 100%;
@@ -96,7 +98,7 @@ li.nav a {
   width: 100%;
   min-height: 800px;
   max-height: auto;
-  background-color: blue;
+  background-color: #EEA18E;
 }
 
 /* About */
