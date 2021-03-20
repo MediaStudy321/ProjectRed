@@ -24,12 +24,16 @@ const playerSchema = new mongoose.Schema({
   },
   party: {},
   characters: {
-    type: [characterSchema],
+    type: [characterSchema]
   },
   items: {},
   rolls: {
     type: Number,
-    default: 3,
+    default: 3
+  },
+  energy: {
+    type: Number,
+    default: 10
   },
 });
 

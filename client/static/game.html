@@ -1,33 +1,55 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheet.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
 
-    <div id="topbar">
-      <p>Profile Name: no name</p><p>Energy: 10/10</p><p>Gold: broke</p>
+<body>
+
+  <div id="header">
+    <div id="split">
+      <h1 style="float:left; padding-top:12px; padding-left:15px;">Profile Name: no name</h1>
+      <h1 style="float:left; padding-top:12px;">Energy: 10/10</h1>
+      <h1 style="float:left; padding-top:12px; padding-right:15px;">Gold: broke</h1>
     </div>
-    <div id="divider"></div>
-    <div id="game">
-      <div id="split">
-        <div id="button"><a href= "profile.html">Profile</a></div>
-        <div id="button"><a href= "games.html">Games</a></div>
-      </div>
-      <div id="split">
-        <div id="button"><a href= "party.html">Party</a></div>
-        <div id="button"><a href= "trade.html">Trade</a></div>
-      </div>
-      <div id="split">
-        <div id="button"><a href= "combat.html">Combattest</a></div></div>
+  </div>
+  <div id="divider"></div>
+  <div id="game">
+    <div id="gbox">
+      <div id="split" style = "margin-left: 20%; margin-right: 20%; padding-top: 100px;">
+        <div id="button">
+          <div id="center2" style = "padding-top: 10px;"><a href="profile.html">Profile</a></div>
+        </div>
+        <div id="button">
+          <div id="center2" style = "padding-top: 10px;"><a href="games.html">Games</a></div>
+        </div>
       </div>
     </div>
-    <div id="divider"></div>
-    <div id="bottombar"></div>
-    
-    </body>   
+    <div id="gbox">
+      <div id="split" style = "margin-left: 20%; margin-right: 20%; padding-top: 100px;">
+        <div id="button">
+          <div id="center2" style = "padding-top: 10px;"><a href="party.html">Party</a></div>
+        </div>
+        <div id="button">
+          <div id="center2" style = "padding-top: 10px;"><a href="trade.html">Trade</a></div>
+        </div>
+      </div>
+    </div>
+    <div id="gbox">
+      <div id="center2" style = "padding-top: 100px;">
+        <div id="button2">
+          <div id="center2" style = "padding-top: 35px;"><a href="combat.html">Combat</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="divider"></div>
+  <div id="bottombar"></div>
+
+</body>
 
 </html>
