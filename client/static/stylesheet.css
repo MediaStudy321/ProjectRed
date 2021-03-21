@@ -8,20 +8,34 @@ body {
   font: 11px sans-serif;
 }
 h1 {
-  font-size: 22px sans-serif;
-  color: black;
+  font-family: 'Staatliches', cursive;
+  font-size: 22px;
+  color: white;
 }
 h2 {
-  font-size: 18px sans-serif;
-  color: black;
+  font-family: 'Staatliches', cursive;
+  font-size: 18px;
+  color: white;
 }
 h3 {
-  font-size: 14px sans-serif;
-  color: black;
+  font-family: 'Staatliches', cursive;
+  font-size: 14px;
+  color: white;
+}
+h4 {
+  font-family: 'Staatliches', cursive;
+  font-size: 22px;
+  color: white;
 }
 p {
-  font: 11px sans-serif;
-  color: black;
+  font-family: 'Staatliches', cursive;
+  font: 11px;
+  color: white;
+}
+b{
+  font-family: 'Staatliches', cursive;
+  font: 11px;
+  color: white;
 }
 .button {
   background-color: white;
@@ -40,9 +54,20 @@ padding-top: 7px;
   height: 77px;
 }
 
+#back {
+   position:fixed;
+   bottom: 50px;
+   right: 50px;
+    background-image:url(/images/back.png);
+    background-color:orange;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+  }
+
 li.nav {
   position: relative;
-  font-family: sans-serif;
+  font-family: 'Staatliches', cursive;
   font-size: 2rem;
   margin-left: 40px;
   white-space: nowrap;
@@ -81,7 +106,9 @@ li.nav a {
   #header {
     width: 100%;
     height: 50px;
-    background-color: red;
+    background-image: url(/images/red.png);
+    background-position: center;
+    background-repeat:initial;
   }
 
 /* Profile */
@@ -106,11 +133,19 @@ li.nav a {
   min-height: 800px;
   max-height: auto;
 }
-#content {
-  width: 100%;
+#boxscroll {
+  width: 1000px;
+  border: 5px solid lightgray;
   min-height: 800px;
   max-height: auto;
-  background-color: #EEA18E;
+  overflow:auto;
+}
+#content {
+  width: 100%;
+  height: 900px;
+  background-image: url(/images/hell2.png);
+  background-position: center;
+  background-repeat:initial;
 }
 
 /* About */
@@ -142,4 +177,21 @@ li.nav a {
 #gbox {
   width: 100%;
   min-height: 1000 px;
+}
+#small {
+  width: 400px;
+  height: 50px;
+}
+span{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
+
+  /* fixes overlap error in IE7/8, 
+     make sure you have an empty gif */
+  background-image: url('empty.gif');
 }
