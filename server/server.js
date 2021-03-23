@@ -7,8 +7,8 @@ const session = require('express-session');
 
 
 const dotenv = require('dotenv').config();
-const dburl = process.env.DB_URL;
-const sessionSecret = process.env.SECRET;
+const dburl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/projectred';
+const sessionSecret = process.env.SECRET || 'catdogmeowoof' ;
 const port = process.env.PORT || 2000;
 
 mongoose.connect(dburl, {useNewUrlParser: true, useUnifiedTopology: true});
