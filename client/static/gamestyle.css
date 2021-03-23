@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  body {
+    background-color: white;
+    font: 11px sans-serif;
+  }
+  h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 22px;
+    color: white;
+  }
+  h2 {
+    font-size: 18px sans-serif;
+    color: black;
+  }
+  h3 {
+    font-size: 14px sans-serif;
+    color: black;
+  }
+  p {
+    font: 11px sans-serif;
+    color: black;
+  }
+  .button {
+    background-color: white;
+    font-size: 11px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+  }
+  
+  #navbar {
+  padding-top: 7px;
+    left: 5%;
+    width: 1000px;
+    height: 77px;
+  }
+  
+  li.nav {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-left: 40px;
+    white-space: nowrap;
+    display: inline;
+    list-style-type: none;
+  }
+  li.nav a {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+      -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  #container {
+      text-align: center;
+      background-color: blue;
+    }
+  
+    #stack {
+      text-align: center;
+      margin-top: 10px;
+    }
+    #center {
+      text-align: center;
+      padding-top: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  
+    #center2 {
+      display: flex;
+      justify-content: center;
+    }
+  
+    #header {
+      width: 100%;
+      height: 50px;
+      background-image: url(/images/red.png);
+      background-position: center;
+      background-repeat:initial;
+    }
+  
+  /* Profile */
+  #profiletop {
+    width: 100%;
+    height: 50px;
+    background-color: red;
+  }
+  #divider {
+      width: 100%;
+      height: 5px;
+      background-color: black;
+    }
+  
+  #split {
+    display: flex;
+    justify-content: space-between;
+  }
+  #box {
+    width: 1000px;
+    border: 5px solid lightgray;
+    min-height: 800px;
+    max-height: auto;
+  }
+
+  #small {
+    width: 400px;
+    height: 50px;
+  }
+  #content {
+    width: 100%;
+    min-height: 800px;
+    max-height: auto;
+    background-color: #EEA18E;
+  }
+  
+  /* About */
+  
+  /* Game */
+  #button {
+    width: 250px;
+    height: 50px;
+    background-color: red;
+    border: 2px solid lightgray;
+  }
+  #button2 {
+    width: 500px;
+    height: 100px;
+    background-color: red;
+    border: 2px solid lightgray;
+  }
+  #game {
+    width: 100%;
+    height: 900px;
+    background-image: url(/images/hell.png);
+    background-position: center;
+    background-repeat:initial;
+  }
+  #back {
+    position:fixed;
+    bottom: 50px;
+    right: 50px;
+     background-image:url(/images/back.png);
+     background-color:orange;
+     width: 80px;
+     height: 80px;
+     border-radius: 15px;
+   }
+  #bottombar {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  }
+  #gbox {
+    width: 100%;
+    min-height: 1000 px;
+  }
+  
+  /* Radial Menu */
+  
+  .wrap{
+    position:relative;
+    width:80vmin; height:80vmin;
+    margin:0 auto;
+    background: black;
+    transform:scale(0.2) translatez(0px);
+    opacity:0;
+    transition:transform .5s, opacity .5s;
+  }
+  a{
+    position:absolute;
+    left:0; top:0;
+    width:47.5%; height:47.5%;
+    overflow:hidden;
+    transform:scale(.5) translateZ(0px);
+    background:black;
+  }
+  a div{
+    height:100%;
+    background-size:cover;
+    opacity:.5;
+    transition:opacity .5s;
+    border-radius:inherit;
+  }
+  a:nth-child(1){
+    border-radius:40vmin 0 0 0;
+    transform-origin: 110% 110%;
+    transition:transform .4s .15s;
+  }
+  a:nth-child(1) div{
+    background-image:url('/images/profile.png');
+  }
+  a:nth-child(2){
+    border-radius:0 40vmin 0 0;
+    left:52.5%;
+    transform-origin: -10% 110%;
+    transition:transform .4s .2s;
+  }
+  a:nth-child(2) div{
+    background-image:url('/images/party.png');
+  }
+  a:nth-child(3){
+    border-radius:0 0 0 40vmin;
+    top:52.5%;
+    transform-origin: 110% -10%;
+    transition:transform .4s .25s;
+  }
+  a:nth-child(3) div{
+    background-image:url('/images/trade.png');
+  }
+  a:nth-child(4){
+    border-radius:0 0 40vmin 0;
+    top:52.5%; left:52.5%;
+    transform-origin: -10% -10%;
+    transition:transform .4s .3s;
+  }
+  a:nth-child(4) div{
+    background-image: url('/images/rolls.png');
+  }
+  a:nth-child(5){
+    width:55%;height:55%;
+    left:22.5%; top:22.5%;
+    border-radius:50vmin;
+    box-shadow:0 0 0 5vmin rgba(0, 0, 0, 1);
+    transform:scale(1);
+  }
+  a:nth-child(5) div{
+    background-image: url('/images/play.png');
+  }
+  span{
+    position:relative;
+    display:block;
+    margin:0 auto;
+    top:45vmin;
+    width:10vmin; height:10vmin;
+    border-radius:100%;
+    background:red;
+    transform:translateZ(0px);
+  }
+  span span{
+    position:absolute;
+    width:60%;height:3px;
+    background:black;
+    left:20%; top:50%;
+    border-radius:0;
+  }
+  span span:after, span span:before{
+    content:'';
+    position:absolute;
+    left:0; top:-1.5vmin;
+    width:100%; height:100%;
+    background:inherit;
+  }
+  span span:after{
+    top:1.5vmin;
+  }
+  span:hover + .wrap, .wrap:hover{
+    transform:scale(.8) translateZ(0px);
+    opacity:1;
+  }
+  span:hover + .wrap a, .wrap:hover a{
+    transform:scale(1) translatez(0px);
+  }
+  a:hover div{
+    opacity:1;
+    transform:translatez(0px);
+  }
