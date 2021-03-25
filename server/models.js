@@ -24,9 +24,11 @@ const playerSchema = new mongoose.Schema({
   },
   party: {},
   characters: {
-    type: [characterSchema]
+    type: [ObjectId]
   },
-  items: {},
+  items: {
+    type: [ObjectId]
+  },
   rolls: {
     type: Number,
     default: 3
@@ -34,7 +36,7 @@ const playerSchema = new mongoose.Schema({
   energy: {
     type: Number,
     default: 10
-  },
+  }
 });
 
 const levelSchema = new mongoose.Schema({
@@ -58,6 +60,10 @@ const characterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  id:{
+    type: String,
+    required: true,
+  }
   health: {
     type: Number,
     required: true,
@@ -78,12 +84,8 @@ const characterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Rank: {
+  rank: {
     type: Number,
     required: true,
-  },
-  isOwned: {
-    type: Boolean,
-    default: false,
-  },
+  }
 });
