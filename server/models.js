@@ -117,7 +117,7 @@ const enemySchema = new mongoose.Schema({
     required: true,
   },
   id:{
-    type: String,
+    type: ObjectId,
     required: true,
   }
   health: {
