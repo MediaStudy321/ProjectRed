@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { ObjectID } = require("mongodb");
+const { ObjectId } = require("mongodb");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -22,12 +23,22 @@ const playerSchema = new mongoose.Schema({
     type: Number,
     min: 1,
   },
-  party: {},
+  party:{
+    first: {
+      type: [ObjectId]
+    },
+    second: {
+      type: [ObjectId]
+    },
+    third: {
+      type: [ObjectId]
+    }
+  },
   characters: {
     type: [ObjectId]
   },
-  items: {
-    type: [ObjectId]
+  potions: {
+    type: Number
   },
   rolls: {
     type: Number,
@@ -52,7 +63,17 @@ const levelSchema = new mongoose.Schema({
     type: Number,
     default: 1,
   },
-  party: {},
+  party:{
+    first: {
+      type: [ObjectId]
+    },
+    second: {
+      type: [ObjectId]
+    },
+    third: {
+      type: [ObjectId]
+    }
+  },
 });
 
 const characterSchema = new mongoose.Schema({
@@ -61,7 +82,7 @@ const characterSchema = new mongoose.Schema({
     required: true,
   },
   id:{
-    type: String,
+    type: ObjectId,
     required: true,
   }
   health: {
@@ -89,3 +110,41 @@ const characterSchema = new mongoose.Schema({
     required: true,
   }
 });
+
+const enemySchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  id:{
+    type: String,
+    required: true,
+  }
+  health: {
+    type: Number,
+    required: true,
+  },
+  attack: {
+    type: Number,
+    required: true,
+  },
+  defense: {
+    type: Number,
+    required: true,
+  },
+  healing: {
+    type: Number,
+    required: true,
+  },
+  class: {
+    type: String,
+    required: true,
+  }
+});
+const user = mongoose.model('user', userSchema);
+const player = mongoose.model('player', playerSchema);
+const character = mongoose.model('character', characterSchema);
+const enemy = mongoose.model('enemy', enemySchema);
+const level = mongoose.model('level', levelSchema);
+
+module.exports= {user,player,character,enemy,level};
