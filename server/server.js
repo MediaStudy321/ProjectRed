@@ -5,11 +5,13 @@ const http = require('http');
 const mongoose = require('mongoose');
 const session = require('express-session');
 
+const requestRouter = require('./router.js');
+
 
 const dotenv = require('dotenv').config();
-const dburl = process.env.DB_URL;
-const sessionSecret = process.env.SECRET;
-const port = process.env.PORT;
+const dburl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/projectred';
+const sessionSecret = process.env.SECRET || 'catdogmeowoof' ;
+const port = process.env.PORT || 2000;
 
 mongoose.connect(dburl, {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -17,6 +19,9 @@ const app = express();
 const clientPath = path.join(__dirname,'../client/');
 const staticPath = path.join(clientPath,'/static/');
 const viewPath = path.join(clientPath,'/views/');
+app.use(express.static(staticPath));
+app.set ('view engine','ejs');
+app.set ('views', viewPath);
 
 app.use(express.urlencoded({extended: true}));
 
@@ -32,25 +37,13 @@ app.use(session({
     name: 'projectred'
 }));
 
-// app.set ('view engine','ejs');
-// app.set ('views', viewPath);
+app.use((req,res,next)=>{
+    console.log(req.originalUrl);
+    next();
+})
 
-// app.get ('/', function (req, res){
-//     res.render('index');
-// });
+app.use('/', requestRouter);
 
-// app.get ('/about', function (req, res){
-//     res.render('about');
-// });
-
-// app.get ('/game', function (req, res){
-//     res.render('game');
-// });
-// app.get ('/profile', function (req, res){
-//      res.render('profile');
-//  });
-
-app.use(express.static(staticPath));
 
 const server = http.createServer(app);
-app.listen(2000);
+app.listen(port);

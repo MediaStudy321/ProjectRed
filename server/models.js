@@ -84,7 +84,7 @@ const characterSchema = new mongoose.Schema({
   id:{
     type: ObjectId,
     required: true,
-  }
+  },
   health: {
     type: Number,
     required: true,
@@ -119,7 +119,7 @@ const enemySchema = new mongoose.Schema({
   id:{
     type: ObjectId,
     required: true,
-  }
+  },
   health: {
     type: Number,
     required: true,
