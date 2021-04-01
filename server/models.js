@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
 const playerSchema = new mongoose.Schema({
   progress: {
     type: Number,
+    default:1,
     min: 1,
   },
   party:{

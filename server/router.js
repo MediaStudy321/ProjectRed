@@ -49,7 +49,8 @@ requestRouter.post('/register', async (req, res) => {
     if(req.body.password==req.body.passwordconfirm) {
         try {
             let hashedPass = await bcrypt.hash(req.body.password,fire);
-            var newUser = new user({username: req.body.name, password: hashedPass});
+            var newUser = new user({username: req.body.username, password: hashedPass});
+            console.log(newUser);
             await newUser.save();
             var newPlayer = new player({user: newUser._id});
             await newPlayer.save();
