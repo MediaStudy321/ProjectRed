@@ -22,7 +22,7 @@ requestRouter.post('/login', async (req,res) => {
                             req.session.username = result.username;
                             req.session.userid = result._id;
                             req.session.isAdmin = result.isAdmin;
-                            req.session.civ = await player.findOne({user: result._id});
+                            req.session.player = await player.findOne({user: result._id});
                             res.redirect('/game/');
                         }
                         else res.render('errorpage', {message: 'Incorrect password.'});

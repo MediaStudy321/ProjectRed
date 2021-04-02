@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 
 const requestRouter = require('./router.js');
+const gameRouter = require('./gamerouter.js');
+const adminRouter = require('./adminrouter.js');
 
 
 const dotenv = require('dotenv').config();
@@ -43,6 +45,8 @@ app.use((req,res,next)=>{
 })
 
 app.use('/', requestRouter);
+app.use('/game/', gameRouter);
+app.use('/admin/', adminRouter);
 
 
 const server = http.createServer(app);
