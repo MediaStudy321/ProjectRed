@@ -56,7 +56,7 @@ requestRouter.post('/register', async (req, res) => {
             await newPlayer.save();
             req.session.authenticated = true;
             req.session.userid = newUser._id;
-            req.session.player = newUser;
+            req.session.player = newPlayer;
             res.redirect('/game/');
         }
         catch(e) {

@@ -15,15 +15,16 @@
   }
   h2 {
     font-size: 18px sans-serif;
-    color: black;
+    color: white;
+    margin-bottom: 10px;
   }
   h3 {
     font-size: 14px sans-serif;
-    color: black;
+    color: white;
   }
   p {
     font: 11px sans-serif;
-    color: black;
+    color: white;
   }
   .button {
     background-color: white;
@@ -73,6 +74,8 @@
       padding-top: 10px;
       padding-left: 50px;
       padding-right: 50px;
+      padding-bottom: 10px;
+      line-height: 30px;
     }
   
     #center2 {

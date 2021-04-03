@@ -19,9 +19,7 @@ const userSchema = new mongoose.Schema({
 
 const playerSchema = new mongoose.Schema({
   progress: {
-    type: Number,
-    default:1,
-    min: 1,
+    type: Number
   },
   party:{
     first: {
@@ -81,10 +79,6 @@ const characterSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  id:{
-    type: ObjectId,
-    required: true,
-  },
   health: {
     type: Number,
     required: true,
@@ -114,10 +108,6 @@ const characterSchema = new mongoose.Schema({
 const enemySchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-  },
-  id:{
-    type: ObjectId,
     required: true,
   },
   health: {
