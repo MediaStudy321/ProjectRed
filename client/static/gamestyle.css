@@ -15,15 +15,16 @@
   }
   h2 {
     font-size: 18px sans-serif;
-    color: black;
+    color: white;
+    margin-bottom: 10px;
   }
   h3 {
     font-size: 14px sans-serif;
-    color: black;
+    color: white;
   }
   p {
     font: 11px sans-serif;
-    color: black;
+    color: white;
   }
   .button {
     background-color: white;
@@ -73,6 +74,8 @@
       padding-top: 10px;
       padding-left: 50px;
       padding-right: 50px;
+      padding-bottom: 10px;
+      line-height: 30px;
     }
   
     #center2 {
@@ -83,7 +86,11 @@
     #header {
       width: 100%;
       height: 50px;
+<<<<<<< HEAD
       background-image: url(images/red.png);
+=======
+      background-image: url(https://i.imgur.com/SEq1GWE.png);
+>>>>>>> development
       background-position: center;
       background-repeat:initial;
     }
@@ -140,7 +147,11 @@
   #game {
     width: 100%;
     height: 900px;
+<<<<<<< HEAD
     background-image: url(images/hell.png);
+=======
+    background-image: url(https://i.imgur.com/iJHTUsa.png);
+>>>>>>> development
     background-position: center;
     background-repeat:initial;
   }
@@ -148,7 +159,11 @@
     position:fixed;
     bottom: 50px;
     right: 50px;
+<<<<<<< HEAD
      background-image:url(images/back.png);
+=======
+     background-image:url(https://i.imgur.com/QeJjEGb.png);
+>>>>>>> development
      background-color:orange;
      width: 80px;
      height: 80px;
@@ -175,7 +190,7 @@
     opacity:0;
     transition:transform .5s, opacity .5s;
   }
-  a{
+  .wrap a{
     position:absolute;
     left:0; top:0;
     width:47.5%; height:47.5%;
@@ -183,59 +198,84 @@
     transform:scale(.5) translateZ(0px);
     background:black;
   }
-  a div{
+  .wrap a div{
     height:100%;
     background-size:cover;
     opacity:.5;
     transition:opacity .5s;
     border-radius:inherit;
   }
-  a:nth-child(1){
+  .wrap a:nth-child(1){
     border-radius:40vmin 0 0 0;
     transform-origin: 110% 110%;
     transition:transform .4s .15s;
   }
+<<<<<<< HEAD
   a:nth-child(1) div{
     background-image:url('images/profile.png');
+=======
+  .wrap a:nth-child(1) div{
+    background-image:url('https://i.imgur.com/AIxoysb.png');
+>>>>>>> development
   }
-  a:nth-child(2){
+  .wrap a:nth-child(2){
     border-radius:0 40vmin 0 0;
     left:52.5%;
     transform-origin: -10% 110%;
     transition:transform .4s .2s;
   }
+<<<<<<< HEAD
   a:nth-child(2) div{
     background-image:url('images/party.png');
+=======
+  .wrap a:nth-child(2) div{
+    background-image:url('https://i.imgur.com/I5Gmfxi.png');
+>>>>>>> development
   }
-  a:nth-child(3){
+  .wrap a:nth-child(3){
     border-radius:0 0 0 40vmin;
     top:52.5%;
     transform-origin: 110% -10%;
     transition:transform .4s .25s;
   }
+<<<<<<< HEAD
   a:nth-child(3) div{
     background-image:url('images/trade.png');
+=======
+  .wrap a:nth-child(3) div{
+    background-image:url('https://i.imgur.com/bIKqh8t.png');
+>>>>>>> development
   }
-  a:nth-child(4){
+  .wrap a:nth-child(4){
     border-radius:0 0 40vmin 0;
     top:52.5%; left:52.5%;
     transform-origin: -10% -10%;
     transition:transform .4s .3s;
   }
+<<<<<<< HEAD
   a:nth-child(4) div{
     background-image: url('images/rolls.png');
+=======
+  .wrap a:nth-child(4) div{
+    background-image: url('https://i.imgur.com/W1eQUF0.png');
+>>>>>>> development
   }
-  a:nth-child(5){
+  .wrap a:nth-child(5){
     width:55%;height:55%;
     left:22.5%; top:22.5%;
     border-radius:50vmin;
     box-shadow:0 0 0 5vmin rgba(0, 0, 0, 1);
     transform:scale(1);
   }
+<<<<<<< HEAD
   a:nth-child(5) div{
     background-image: url('images/play.png');
+=======
+  .wrap a:nth-child(5) div{
+    background-image: url('https://i.imgur.com/jiozeym.png');
+>>>>>>> development
   }
-  span{
+  #game span{
     position:relative;
     display:block;
     margin:0 auto;
@@ -245,31 +285,45 @@
     background:red;
     transform:translateZ(0px);
   }
-  span span{
+  #game span span{
     position:absolute;
     width:60%;height:3px;
     background:black;
     left:20%; top:50%;
     border-radius:0;
   }
-  span span:after, span span:before{
+  #game span span:after, span span:before{
     content:'';
     position:absolute;
     left:0; top:-1.5vmin;
     width:100%; height:100%;
     background:inherit;
   }
-  span span:after{
+  #game span span:after{
     top:1.5vmin;
   }
-  span:hover + .wrap, .wrap:hover{
+  #game span:hover + .wrap, .wrap:hover{
     transform:scale(.8) translateZ(0px);
     opacity:1;
   }
-  span:hover + .wrap a, .wrap:hover a{
+  #game span:hover + .wrap a, .wrap:hover a{
     transform:scale(1) translatez(0px);
   }
-  a:hover div{
+  #game a:hover div{
     opacity:1;
     transform:translatez(0px);
+  }
+
+  #back span{
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+  
+    z-index: 1;
+  
+    /* fixes overlap error in IE7/8, 
+       make sure you have an empty gif */
+    background-image: url('empty.gif');
   }
