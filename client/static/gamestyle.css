@@ -86,11 +86,7 @@
     #header {
       width: 100%;
       height: 50px;
-<<<<<<< HEAD
-      background-image: url(images/red.png);
-=======
       background-image: url(https://i.imgur.com/SEq1GWE.png);
->>>>>>> development
       background-position: center;
       background-repeat:initial;
     }
@@ -147,11 +143,7 @@
   #game {
     width: 100%;
     height: 900px;
-<<<<<<< HEAD
-    background-image: url(images/hell.png);
-=======
     background-image: url(https://i.imgur.com/iJHTUsa.png);
->>>>>>> development
     background-position: center;
     background-repeat:initial;
   }
@@ -159,11 +151,7 @@
     position:fixed;
     bottom: 50px;
     right: 50px;
-<<<<<<< HEAD
-     background-image:url(images/back.png);
-=======
      background-image:url(https://i.imgur.com/QeJjEGb.png);
->>>>>>> development
      background-color:orange;
      width: 80px;
      height: 80px;
@@ -210,13 +198,8 @@
     transform-origin: 110% 110%;
     transition:transform .4s .15s;
   }
-<<<<<<< HEAD
-  a:nth-child(1) div{
-    background-image:url('images/profile.png');
-=======
   .wrap a:nth-child(1) div{
     background-image:url('https://i.imgur.com/AIxoysb.png');
->>>>>>> development
   }
   .wrap a:nth-child(2){
     border-radius:0 40vmin 0 0;
@@ -224,13 +207,8 @@
     transform-origin: -10% 110%;
     transition:transform .4s .2s;
   }
-<<<<<<< HEAD
-  a:nth-child(2) div{
-    background-image:url('images/party.png');
-=======
   .wrap a:nth-child(2) div{
     background-image:url('https://i.imgur.com/I5Gmfxi.png');
->>>>>>> development
   }
   .wrap a:nth-child(3){
     border-radius:0 0 0 40vmin;
@@ -238,13 +216,8 @@
     transform-origin: 110% -10%;
     transition:transform .4s .25s;
   }
-<<<<<<< HEAD
-  a:nth-child(3) div{
-    background-image:url('images/trade.png');
-=======
   .wrap a:nth-child(3) div{
     background-image:url('https://i.imgur.com/bIKqh8t.png');
->>>>>>> development
   }
   .wrap a:nth-child(4){
     border-radius:0 0 40vmin 0;
@@ -252,13 +225,8 @@
     transform-origin: -10% -10%;
     transition:transform .4s .3s;
   }
-<<<<<<< HEAD
-  a:nth-child(4) div{
-    background-image: url('images/rolls.png');
-=======
   .wrap a:nth-child(4) div{
     background-image: url('https://i.imgur.com/W1eQUF0.png');
->>>>>>> development
   }
   .wrap a:nth-child(5){
     width:55%;height:55%;
@@ -267,13 +235,8 @@
     box-shadow:0 0 0 5vmin rgba(0, 0, 0, 1);
     transform:scale(1);
   }
-<<<<<<< HEAD
-  a:nth-child(5) div{
-    background-image: url('images/play.png');
-=======
   .wrap a:nth-child(5) div{
     background-image: url('https://i.imgur.com/jiozeym.png');
->>>>>>> development
   }
   #game span{
     position:relative;

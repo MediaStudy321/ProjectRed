@@ -11,11 +11,7 @@ const adminRouter = require('./adminrouter.js');
 
 
 const dotenv = require('dotenv').config();
-<<<<<<< HEAD
-const dburl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/projectred';
-=======
 const dburl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/ProjectRed';
->>>>>>> development
 const sessionSecret = process.env.SECRET || 'catdogmeowoof' ;
 const port = process.env.PORT || 2000;
 
