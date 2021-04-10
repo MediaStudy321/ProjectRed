@@ -17,12 +17,15 @@ const loggedin = (req, res, next) => {
     }
 }
 
-gameRouter.use(loggedin);
+// gameRouter.use(loggedin);
 
+// Middleware to check that the user has a player document, and whether progress has been set.
 const gotPlayer = (req, res, next) => {
     if(req.session.player) {
-        if(req.session.player.progress) next();
-        else res.redirect('intro/');
+        next();
+        // TODO: Finish setup under /game/intro and set "progress" to truthy
+        //if(req.session.player.progress) next();
+        //else res.redirect('intro/');
     }
     else {
         player.findOne({user: req.session.userid}, async (error, result)=>{
@@ -48,8 +51,8 @@ const gotPlayer = (req, res, next) => {
 
 
 gameRouter.get('/', gotPlayer, async (req, res) => {
-    console.log(req.session);
-    res.render('game');
+    if(req.originalUrl=='/game') res.redirect('/game/');
+    else res.render('game');
 });
 
 //NEW GAME
@@ -70,5 +73,12 @@ gameRouter.get('/intro/', async (req,res) => {
         res.render('intro');
     }
 });
+
+// FIGHT!
+
+gameRouter.get('/fight/', (req,res)=> {
+    res.render('combat');
+});
+
 
 module.exports = gameRouter;
