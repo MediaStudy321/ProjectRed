@@ -15,7 +15,12 @@ const dburl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/ProjectRed';
 const sessionSecret = process.env.SECRET || 'catdogmeowoof' ;
 const port = process.env.PORT || 2000;
 
-mongoose.connect(dburl, {useNewUrlParser: true, useUnifiedTopology: true});
+try {
+    mongoose.connect(dburl, {useNewUrlParser: true, useUnifiedTopology: true});
+}
+catch(e) {
+    console.log('Failed to connect to database.');
+}
 
 const app = express();
 const clientPath = path.join(__dirname,'../client/');
