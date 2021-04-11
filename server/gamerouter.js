@@ -1,7 +1,7 @@
 
 const express = require('express');
 const path = require('path');
-const {player,character,enemy,level} = require('./models.js');
+const {player, level} = require('./models.js');
 
 const gameRouter = express.Router();
 
@@ -17,7 +17,7 @@ const loggedin = (req, res, next) => {
     }
 }
 
-// gameRouter.use(loggedin);
+gameRouter.use(loggedin);
 
 // Middleware to check that the user has a player document, and whether progress has been set.
 const gotPlayer = (req, res, next) => {
