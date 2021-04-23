@@ -234,6 +234,40 @@ $(async ()=>{
     //
     //          3.  Combat actions
     //
+    // function checkAdvantage(attacker,defender){
+    //     let attackertype=attacker.type
+    //     let defendertype=defender.type
+    //     var x = 3
+    //     if(attackertype=water){
+    //         if(defendertype= the type that gives advantage){
+    //             var x=1
+    //         }else if(defendertype= the type that gives disadvantage){
+    //             var x=2
+    //         }else{
+    //             var x=3
+    //         }
+    //     }else if (attackertype=fire){
+
+    //     }else if(for each attacker type){
+
+    //     }
+    //     if check each type of possible attacker
+
+    //     boolean = true for advantage false for disadvantage
+    // }
+    // //inside do attack
+    // checkAdvantage(attacker,defender);
+    // if(x==1){
+    //     let damage = attacker.attack * 1.2;
+    //     defender.hp -= attacker.attack;
+    // }else if(x==2){
+    //     let damage = attacker.attack / 2;
+    //     defender.hp -= attacker.attack;
+    // }else{
+    //     let damage = attacker.attack;
+    //     defender.hp -= attacker.attack;
+    // }
+
 
     function doAttack(attacker, defender) {
         let damage = attacker.attack;
