@@ -7,6 +7,7 @@ const sampleHeroes = {
         max_mp: 200,
         speed: 1,
         color: '#FF0000'
+        type: 'fire'
     },
 }
 
@@ -20,6 +21,7 @@ const sampleMonsters = {
         speed: 18,
         icon: '&#9752;',
         color: '#DDFFDD'
+        type: 'poison'
     },
 }
 
