@@ -6,8 +6,8 @@ const sampleHeroes = {
         max_hp: 300,
         max_mp: 200,
         speed: 1,
-        color: '#FF0000'
-        type: 'fire'
+        img: 'picture of hero',
+        type: 'fire',
     },
 }
 
@@ -19,9 +19,8 @@ const sampleMonsters = {
         max_hp: 50,
         max_mp: 0,
         speed: 18,
-        icon: '&#9752;',
-        color: '#DDFFDD'
-        type: 'poison'
+        img: 'picture of villians',
+        type: 'poison',
     },
 }
 
