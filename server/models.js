@@ -26,17 +26,17 @@ const playerSchema = new mongoose.Schema({
   },
   party:{
     first: {
-      type: [ObjectID]
+      type: Number
     },
     second: {
-      type: [ObjectID]
+      type: Number
     },
     third: {
-      type: [ObjectID]
+      type: Number
     }
   },
   characters: {
-    type: [ObjectID]
+    type: [Number]
   },
   potions: {
     type: Number
@@ -66,13 +66,13 @@ const levelSchema = new mongoose.Schema({
   },
   party:{
     first: {
-      type: [ObjectID]
+      type: Number
     },
     second: {
-      type: [ObjectID]
+      type: Number
     },
     third: {
-      type: [ObjectID]
+      type: Number
     }
   },
 });
