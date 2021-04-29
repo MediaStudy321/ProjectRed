@@ -28,11 +28,18 @@
     </div><br/>
     <div align="center"><p>It just so happens that I found some nice recruits for you. Why don't you pick one to start out. You can always find more from the casino. In hell, we demons gamble for lost souls.</p>
     </div>
-    <div class="introMenu">
-      <button type="button" class="combatButton" id="Choice1">Choice1</button>
-      <button type="button" class="combatButton" id="Choice2">Choice2</button>
-      <button type="button" class="combatButton" id="Choice3">Choice3</button>
-    </div>
+
+    <form action="begin" method="POST">
+      <div class="introMenu">
+        <select name="character">
+          <option value="floridaman">FloridaMan</option>
+          <option value="ed">Ed</option>
+          <option value="yesman">YesMan</option>
+      </select>.<br/><br/>
+
+      <button type="submit">To Combat</button>
+    </form>
+
 
 </body>
 

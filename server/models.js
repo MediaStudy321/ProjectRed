@@ -22,21 +22,22 @@ const playerSchema = new mongoose.Schema({
     type: ObjectID
   },
   progress: {
-    type: Number
+    type: Number,
+    default: 0
   },
   party:{
     first: {
-      type: Number
+      type: String
     },
     second: {
-      type: Number
+      type: String
     },
     third: {
-      type: Number
+      type: String
     }
   },
   characters: {
-    type: [Number]
+    type: [String]
   },
   potions: {
     type: Number
@@ -51,93 +52,8 @@ const playerSchema = new mongoose.Schema({
   }
 });
 
-const levelSchema = new mongoose.Schema({
-  number: {
-    type: Number,
-    required: true,
-  },
-  initialReward: {
-    type: Number,
-    default: 2,
-  },
-  secondReward: {
-    type: Number,
-    default: 1,
-  },
-  party:{
-    first: {
-      type: Number
-    },
-    second: {
-      type: Number
-    },
-    third: {
-      type: Number
-    }
-  },
-});
 
-const characterSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  health: {
-    type: Number,
-    required: true,
-  },
-  attack: {
-    type: Number,
-    required: true,
-  },
-  defense: {
-    type: Number,
-    required: true,
-  },
-  healing: {
-    type: Number,
-    required: true,
-  },
-  class: {
-    type: String,
-    required: true,
-  },
-  rank: {
-    type: Number,
-    required: true,
-  }
-});
-
-const enemySchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  health: {
-    type: Number,
-    required: true,
-  },
-  attack: {
-    type: Number,
-    required: true,
-  },
-  defense: {
-    type: Number,
-    required: true,
-  },
-  healing: {
-    type: Number,
-    required: true,
-  },
-  class: {
-    type: String,
-    required: true,
-  }
-});
 const user = mongoose.model('user', userSchema);
 const player = mongoose.model('player', playerSchema);
-const character = mongoose.model('character', characterSchema);
-const enemy = mongoose.model('enemy', enemySchema);
-const level = mongoose.model('level', levelSchema);
 
-module.exports= {user,player,character,enemy,level};
+module.exports= {user,player};

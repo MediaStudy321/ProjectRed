@@ -10,21 +10,27 @@ requestRouter.get('/', (req, res) => {
 });
 
 requestRouter.get('/intro/', (req, res)=>{
-    console.log(req.session);
-    console.log(req.session.player.progress);
-    if(req.session.player.progress) res.redirect('/game/')
-    else {
-        var p;
-        try {
-            let newPlayer = req.session.player;
-            console.log(newPlayer);
-        }
-        catch(e) {
-            console.log(e);
-        }
-        res.render('intro');
-    }
+    if(!req.session.authenticated) res.redirect('/');
+    if(req.session.player.progress>0) res.redirect('/game/');
+    else res.render('intro');
 });
+
+requestRouter.post('/intro/begin', async (req,res) => {
+    console.log(req.body)
+    try {
+        var playe = await player.findOne({user:req.session.userid});
+        playe.characters.push(req.body.character);
+        playe.progress=1;
+        playe.save();
+        req.session.player = playe;
+    }
+    catch (e) {
+        res.status(500);
+        console.log(e);
+    }
+    res.redirect('/game/');
+});
+
 requestRouter.post('/login', async (req,res) => {
     try {
         await user.findOne({username: req.body.username}, async (err, result) => {

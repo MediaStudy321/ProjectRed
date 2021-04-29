@@ -1,30 +1,52 @@
-const sampleHeroes = {
-    Yourcharactersname: {
+const heroSet = {
+    FloridaMan: {
+        id: 2,
+        name: 'Florida Man',
+        attack: 20,
+        max_hp: 400,
+        max_mp: 200,
+        speed: .5,
+        color: 'yellow',
+        img: '',
+        type: 'Gemini',
+    },
+    Ed: {
         id: 1,
-        name: 'Cloud',
+        name: 'Ed',
         attack: 30,
         max_hp: 300,
         max_mp: 200,
-        speed: 1,
-        color: 'whatever',
-        img: 'picture of hero',
+        speed: 10,
+        color: 'white',
+        img: 'https://i.imgur.com/sEOYWsX.png',
         type: 'fire',
+    },
+    YesMan: {
+        id: 3,
+        name: 'Yes Man',
+        attack: 50,
+        max_hp: 200,
+        max_mp: 400,
+        speed: 2,
+        color: 'green',
+        img: 'picture of hero',
+        type: 'Lutheran',
     },
 }
 
-const sampleMonsters = {
-    Monstersname: {
-        id: 1,
-        name: 'Ferocious rabbit',
-        attack: 1,
+const monsterSet = {
+    Leeches: {
+        id: 41,
+        name: 'Leeches',
+        attack: 10,
         max_hp: 50,
         max_mp: 0,
-        speed: 18,
+        speed: 12,
         icon: '',
-        color:'',
-        img: 'picture of villians',
+        color:'black',
+        img: 'https://i.imgur.com/Q06fVmP.png',
         type: 'poison',
     },
 }
 
-module.exports = {sampleHeroes, sampleMonsters}
+module.exports = {heroSet, monsterSet}

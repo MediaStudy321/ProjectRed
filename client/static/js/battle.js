@@ -1,7 +1,7 @@
 $(async ()=>{
         
     // GAME CONSTANTS
-    const framedelay = 400; // How many milliseconds between frames?
+    const framedelay = 40; // How many milliseconds between frames?
     const happyIcon = "&#9786;";
     const deadIcon = "&#9760;";
     const timeout = 100000;  // Maximum frames before battle ends in a stalemate
@@ -64,9 +64,6 @@ $(async ()=>{
             element.hp = element.max_hp;
             element.mp = element.max_mp;
 
-            // Limit breaks!
-            element.limit=0;
-
             //  Start everyone off with some amount of their action meter filled
             element.initiative = Math.floor(Math.random()*50)+10;
         })
@@ -120,19 +117,24 @@ $(async ()=>{
                 break;
             case 'stalemate':
                 window.alert('Battle ends in stalemate');
-                battleState = 'end';
+                battleState = 'defeat';
                 break;
             case 'victory':
-                window.alert('You win!');
-                battleStage = 'end';
+                console.log(party)
+                $.ajax({
+                    type: "POST",
+                    data: party,
+                    url: "victory",
+                    success: (data) => {
+                        alert('Well done!');
+                        window.location="/game/"
+                    }
+                })
+                clearInterval(battle);
                 break;
             case 'defeat':
                 window.alert('You lose!');
-                battleStage = 'end';
-                break;
-            case 'end':
                 clearInterval(battle);
-                console.log('battle over');
                 break;
         }
         frames++;
@@ -300,14 +302,8 @@ $(async ()=>{
         $('#heroIcons').html('');
         for(let i=0; i<party.length; i++) {
             let hero=party[i]
-
-            let icon;
-            if(hero.hp>0) icon=happyIcon; else icon=deadIcon;
-            let id = "hero_"+i;
-            let avatar = "<span class='avatar' id='"+id+"'>"+icon+"</span>";
-            $('#heroIcons').append(avatar);
-            $('#'+id).css('color', hero.color);
-            if(hero.stance=="active")  $('#'+id).css('text-decoration', 'underline');
+            let img = "<img src="+hero.img+"' id='hero_"+i+"' style='width: 100px; height: 120px''/>";
+            $('#heroIcons').append(img);
         }
     }
 
@@ -315,13 +311,10 @@ $(async ()=>{
         $('#monsters').html('');
         for(let i=0; i<monsters.length; i++) {
             let enemy = monsters[i]
-            let icon;
-            if(enemy.hp>0) icon=enemy.icon; else icon=deadIcon;
-            let id = 'monster_'+i;
-            let avatar = "<span class='avatar' id='"+id+"'>"+icon+"</span>";
-            $('#monsters').append(avatar);
-            $('#'+id).css('color', enemy.color);
-            if(enemy.stance=="active")  $('#'+id).css('text-decoration', 'underline');
+            if(enemy.hp>0) {
+                let img = "<img src="+enemy.img+"' id='monster_"+i+"' style='width: 100px; height: 120px''/>";
+                $('#monsters').append(img);
+            }
         }
     }
 
@@ -340,7 +333,6 @@ $(async ()=>{
                 element.hp+"/"+element.max_hp+" HP</td><td>"+
                 element.mp+"/"+element.max_mp+" MP</td><td>"+
                 element.stance+"</td><td>"+
-                Math.floor(element.limit)+"% LIMIT</td><td>"+
                 Math.floor(element.initiative)+"% ACTION</td></tr>";
             $('#heroStats').append(entry);
         });
