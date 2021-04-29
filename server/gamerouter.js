@@ -74,7 +74,7 @@ gameRouter.get('/intro/', async (req,res) => {
 
 //COMBAT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-router.get('/getheroes', (req, res)=>{
+gameRouter.get('/getheroes', (req, res)=>{
     //  The game client expects an array, but our sampleHeroes are a JSON object.
     //  It will be necessary to construct the array server-side.  Since
     //  this is an example, the construction will be arbitrary.  In a full
@@ -89,7 +89,7 @@ router.get('/getheroes', (req, res)=>{
     res.send(party);
 });
 
-router.get('/getmonsters', (req, res)=>{
+gameRouter.get('/getmonsters', (req, res)=>{
 
     // RED STUDIO TODO:
     // 1.  Look up what level the player is on
