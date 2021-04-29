@@ -1,199 +1,31 @@
-* {
-  margin: 0;
-  padding: 0;
+body {
+  background-color: black;
+  color: white;
+  background-size: cover;
+  background-image: url(https://i.imgur.com/YLqyGAX.png);
 }
 
-body {
-  background-color: white;
-  font: 11px sans-serif;
-}
 h1 {
   font-family: 'Staatliches', cursive;
-  font-size: 22px;
-  color: white;
 }
+
 h2 {
   font-family: 'Staatliches', cursive;
-  font-size: 18px;
-  color: white;
-}
-h3 {
-  font-family: 'Staatliches', cursive;
-  font-size: 14px;
-  color: white;
-}
-h4 {
-  font-family: 'Staatliches', cursive;
-  font-size: 22px;
-  color: white;
 }
 p {
-  font-family: 'Staatliches', cursive;
-  font: 11px;
+  font-family: 'Staatliches';
+}
+
+a {
   color: white;
 }
-b{
-  font-family: 'Staatliches', cursive;
-  font: 11px;
-  color: white;
-}
+
 .button {
   background-color: white;
   font-size: 11px;
 }
-a {
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-}
 
-#navbar {
-padding-top: 7px;
-  left: 5%;
-  width: 1000px;
-  height: 77px;
-}
-
-#back {
-   position:fixed;
-   bottom: 50px;
-   right: 50px;
-    background-image:url(https://i.imgur.com/QeJjEGb.png);
-    background-color:orange;
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-  }
-
-li.nav {
-  position: relative;
-  font-family: 'Staatliches', cursive;
-  font-size: 2rem;
-  margin-left: 40px;
-  white-space: nowrap;
-  display: inline;
-  list-style-type: none;
-}
-li.nav a {
-  color: white;
-  text-decoration: none;
-  -webkit-text-stroke: 0.5px black;
-  color: white;
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000, 1px 1px 0 #000;
-}
-#container {
-    text-align: center;
-    background-color: blue;
-  }
-
-  #stack {
-    text-align: center;
-    margin-top: 10px;
-  }
-  #center {
-    text-align: center;
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-  #center2 {
-    display: flex;
-    justify-content: center;
-  }
-
-  #header {
-    width: 100%;
-    height: 50px;
-    background-image: url(https://i.imgur.com/SEq1GWE.png);
-    background-color:maroon;
-    background-position: center;
-    background-repeat:initial;
-  }
-
-/* Profile */
-#profiletop {
-  width: 100%;
-  height: 50px;
-  background-color: red;
-}
-#divider {
-    width: 100%;
-    height: 5px;
-    background-color: black;
-  }
-
-#split {
-  display: flex;
-  justify-content: space-between;
-}
-#box {
-  width: 1000px;
-  border: 5px solid lightgray;
-  min-height: 800px;
-  max-height: auto;
-}
-#boxscroll {
-  width: 1000px;
-  border: 5px solid lightgray;
-  min-height: 800px;
-  max-height: auto;
-  overflow:auto;
-}
 #content {
-  width: 100%;
-  height: 900px;
-  background-image: url(https://i.imgur.com/YLqyGAX.png);
-  background-color: black;
-  background-position: center;
-  background-repeat:initial;
-}
-
-/* About */
-
-/* Game */
-#button {
-  width: 250px;
-  height: 50px;
-  background-color: red;
-  border: 2px solid lightgray;
-}
-#button2 {
-  width: 500px;
-  height: 100px;
-  background-color: red;
-  border: 2px solid lightgray;
-}
-#game {
-  width: 100%;
-  min-height: 800px;
-  max-height: auto;
-  background-color: #EEA18E;
-}
-#bottombar {
-  width: 100%;
-  height: 100%;
-  background-color: red;
-}
-#gbox {
-  width: 100%;
-  min-height: 1000 px;
-}
-#small {
-  width: 400px;
-  height: 50px;
-}
-span{
-  position:absolute; 
-  width:100%;
-  height:100%;
-  top:0;
-  left: 0;
-
-  z-index: 1;
-
-  /* fixes overlap error in IE7/8, 
-     make sure you have an empty gif */
-  background-image: url('empty.gif');
+  margin-left: 10%;
+  margin-right: 10%
 }

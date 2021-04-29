@@ -9,6 +9,22 @@ requestRouter.get('/', (req, res) => {
     res.render('index');
 });
 
+requestRouter.get('/intro/', (req, res)=>{
+    console.log(req.session);
+    console.log(req.session.player.progress);
+    if(req.session.player.progress) res.redirect('/game/')
+    else {
+        var p;
+        try {
+            let newPlayer = req.session.player;
+            console.log(newPlayer);
+        }
+        catch(e) {
+            console.log(e);
+        }
+        res.render('intro');
+    }
+});
 requestRouter.post('/login', async (req,res) => {
     try {
         await user.findOne({username: req.body.username}, async (err, result) => {

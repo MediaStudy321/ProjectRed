@@ -1,11 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  body {
-    background-color: white;
+body {
+    background-color: black;
     font: 11px sans-serif;
   }
   h1 {
@@ -37,7 +31,7 @@
   }
   
   #navbar {
-  padding-top: 7px;
+    padding-top: 7px;
     left: 5%;
     width: 1000px;
     height: 77px;
@@ -62,7 +56,6 @@
   }
   #container {
       text-align: center;
-      background-color: blue;
     }
   
     #stack {
@@ -102,11 +95,7 @@
       height: 5px;
       background-color: black;
     }
-  
-  #split {
-    display: flex;
-    justify-content: space-between;
-  }
+
   #box {
     width: 1000px;
     border: 5px solid lightgray;
@@ -122,7 +111,6 @@
     width: 100%;
     min-height: 800px;
     max-height: auto;
-    background-color: #EEA18E;
   }
   
   /* About */
@@ -131,13 +119,11 @@
   #button {
     width: 250px;
     height: 50px;
-    background-color: red;
     border: 2px solid lightgray;
   }
   #button2 {
     width: 500px;
     height: 100px;
-    background-color: red;
     border: 2px solid lightgray;
   }
   #game {

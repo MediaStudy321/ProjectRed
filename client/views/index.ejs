@@ -8,80 +8,59 @@
 </head>
 
 <body>
-    <div id="backgroundindex">
-        <div id="header">
-            <div id="navbar">
-                <ul>
-                    <li class="nav"><a href="/">Home</a></li>
-                    <li class="nav"><a href="about.html">About</a></li>
-                    <li class="nav"><a href="aboutCombat.html">About Combat</a></li>
-                    <li class="nav"><a href="aboutRolls.html">About Rolls </a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="divider"></div>
-        <div id="content">
-            <div id="split">
-                <div id="box">
-                    <div id="center">
-                        <h1>Welcome to Hell colosseum</h1>
-                    </div>
-                    <br></br>
-                    <form action="login" method="POST">
-                    <div class="container">
-                        <div id="stack">
-                            <div id="center"><h2>LOGIN</h2></div>
-                        </div>
-                        <div id="stack">
-                            <label for="username"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="username" required>
-                        </div>
-                        <div id="stack">
-                            <label for="password"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="password" required>
-                        </div>
-                        <div id="stack">
-                            <button type="submit" id="login">Login</button>
-                        </div>
-                    </div>
-                    </form>
-                    <br></br> <br></br> <br></br>
-                    <form action="register" method="POST">
-                        <div class="container">
-                            <div id="stack">
-                                <div id="center"><h2>REGISTER</h2></div>
-                            </div>
-                            <div id="stack">
-                                <label for="username"><b>Username</b></label>
-                                <input type="text" placeholder="Enter Username" name="username" required>
-                            </div>
-                            <div id="stack">
-                                <label for="password"><b>Password</b></label>
-                                <input type="password" placeholder="Password" name="password" required>
-                            </div>
-                            <div id="stack">
-                                <label for="password"><b>Password</b></label>
-                                <input type="password" placeholder="Confirm Password" name="passwordconfirm" required>
-                            </div>
-                            <div id="stack">
-                                <button type="submit" id="register">Register</button>
-                            </div>
-                        </div>
-                        </form>
+    <div id="content">
+        <h1 align="center">Welcome to Hell's Colosseum</h1>
+        <br/>
 
-                    
-                </div>
-                <div id="box">
-                    <div id="center">
-                        <h2>Come here and choose your character, trade with friends, and battle your way through the
-                            Hell
-                            colosseum.</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <form action="login" method="POST">
+        <table align="center" cellpadding="6">
+            <tr>
+                <th colspan="2">LOGIN</th>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Password</th>
+                <td><input type="password" placeholder="Enter Password" name="password" required></td>
+            </tr>
+            <tr>
+                <th colspan="2"><button type="submit" id="login">Login</button></th>
+            </tr>
+        </table>
+        </form>
+
+        <br></br>
+
+        <form action="register" method="POST">
+            <table align="center" cellpadding="6">
+                <tr><th colspan="2">REGISTER</th></tr>
+                <tr>
+                    <th>Username</th>
+                    <td><input type="text" placeholder="Enter Username" name="username" required></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" placeholder="Password" name="password" required></td>
+                </tr>
+                <tr>
+                    <th>Repeat password</th>
+                    <td><input type="password" placeholder="Confirm Password" name="passwordconfirm" required></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <button type="submit" id="register">Register</button>
+                    </th>
+                </tr>
+            </table>
+        </form>
+        <h2 align="center">Come here and choose your character, trade with friends, and battle your way through the Hell's Collosseum.<br/><br/>
+        Learn more <a href="about.html">about the game</a>.</h2>
     </div>
-    <div id="divider"></div>
 </body>
 
 </html>

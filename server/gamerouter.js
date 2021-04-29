@@ -18,12 +18,10 @@ const loggedin = (req, res, next) => {
     }
 }
 
-gameRouter.use(loggedin);
-
 const gotPlayer = (req, res, next) => {
     if(req.session.player) {
         if(req.session.player.progress) next();
-        else res.redirect('intro/');
+        else res.redirect('/intro/');
     }
     else {
         player.findOne({user: req.session.userid}, async (error, result)=>{
@@ -32,7 +30,7 @@ const gotPlayer = (req, res, next) => {
                 try {
                     let playe = new player({user: req.session.userid});
                     await playe.save();
-                    res.redirect('intro/')
+                    res.redirect('/intro/')
                 }
                 catch(e) {
                     res.status(500);
@@ -41,40 +39,28 @@ const gotPlayer = (req, res, next) => {
             else {
                 req.session.player = result;
                 if(req.session.player.progress) next();
-                else res.redirect('intro/')
+                else res.redirect('/intro/')
             }
         });
     }
 }
 
+//gameRouter.use(loggedin);
+//gameRouter.use(gotPlayer);
 
-gameRouter.get('/', gotPlayer, async (req, res) => {
+gameRouter.get('/', async (req, res) => {
     console.log(req.session);
     res.render('game');
 });
 
-//NEW GAME
+gameRouter.get('/battle/', (req, res)=>{
+    res.render('battle')
+})
 
-gameRouter.get('/intro/', async (req,res) => {
-    console.log(req.session);
-    console.log(req.session.player.progress);
-    if(req.session.player.progress) res.redirect('/game/')
-    else {
-        var p;
-        try {
-            let newPlayer = req.session.player;
-            console.log(newPlayer);
-        }
-        catch(e) {
-            console.log(e);
-        }
-        res.render('intro');
-    }
-});
 
 //COMBAT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-gameRouter.get('/getheroes', (req, res)=>{
+gameRouter.get('/battle/getheroes', (req, res)=>{
     //  The game client expects an array, but our sampleHeroes are a JSON object.
     //  It will be necessary to construct the array server-side.  Since
     //  this is an example, the construction will be arbitrary.  In a full
@@ -89,7 +75,7 @@ gameRouter.get('/getheroes', (req, res)=>{
     res.send(party);
 });
 
-gameRouter.get('/getmonsters', (req, res)=>{
+gameRouter.get('/battle/getmonsters', (req, res)=>{
 
     // RED STUDIO TODO:
     // 1.  Look up what level the player is on
