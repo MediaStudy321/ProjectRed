@@ -36,37 +36,44 @@
         <option>YesMan</option>
     </select>.<br/><br/>
 
-<button id="submitcharacter">To Combat</button>
+  <button id="submitcharacter">To Combat</button>
+
+  <div id="finalize" style="display:none">
+    <h2><a href="/game/">To the Depths of Hell!</a></h2>
+  </div>
 
     </div>
   <div id="divider"></div>
 
   <script>
-    const updateProgress = ()=> {
-    var progress;
+
+    var charsel = '';
+    const updateProgress = () => {
+      if (charsel != '') {
+        $('finalize').show();
+      }
     }
 
-$(()=>{
-  $('#submitcharacter').on('click', () => {
-    let schar = $('#character').val();
-        console.log(schar);
-        $.ajax({
-            url: 'newplayer',
+      $(() => {
+        $('#submitcharacter').on('click', () => {
+          let schar = $('#character').val();
+          console.log(schar);
+          $.ajax({
+            url: 'characters',
             type: 'POST',
             data: schar,
             success: (data) => {
-                console.log(data);
-                character = schar.name;
-                updateProgress();
+              console.log(data);
+              charsel = schar;
+              updateProgress();
             },
             error: (e) => {
-                console.log('ERROR!');
-                console.log(e);
+              console.log('ERROR!');
+              console.log(e);
             }
+          });
         });
-    }
-    else alert('There are some problems with this process');
-});
+      });
   </script>
 </body>
 

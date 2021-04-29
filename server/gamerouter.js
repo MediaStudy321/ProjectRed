@@ -72,6 +72,20 @@ gameRouter.get('/intro/', async (req,res) => {
     }
 });
 
+gameRouter.post('/intro/characters', async (req,res) => {
+    try {
+        var playe = await player.findOne({user:req.session.userid});
+        playe.characters.push();
+        playe.progress=1;
+        await playe.save();
+        res.send('SUCCESS');
+    }
+    catch (e) {
+        res.status(500);
+        console.log(e);
+    }
+});
+
 //COMBAT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 gameRouter.get('/getheroes', (req, res)=>{
