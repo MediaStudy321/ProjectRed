@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { ObjectId } = require("mongodb");
+const { ObjectID } = require("mongodb");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -18,22 +18,25 @@ const userSchema = new mongoose.Schema({
 });
 
 const playerSchema = new mongoose.Schema({
+  user: {
+    type: ObjectID
+  },
   progress: {
     type: Number
   },
   party:{
     first: {
-      type: [ObjectId]
+      type: Number
     },
     second: {
-      type: [ObjectId]
+      type: Number
     },
     third: {
-      type: [ObjectId]
+      type: Number
     }
   },
   characters: {
-    type: [ObjectId]
+    type: [Number]
   },
   potions: {
     type: Number
@@ -63,13 +66,13 @@ const levelSchema = new mongoose.Schema({
   },
   party:{
     first: {
-      type: [ObjectId]
+      type: Number
     },
     second: {
-      type: [ObjectId]
+      type: Number
     },
     third: {
-      type: [ObjectId]
+      type: Number
     }
   },
 });

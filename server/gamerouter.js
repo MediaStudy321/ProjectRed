@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const {player,character,enemy,level} = require('./models.js');
+const { sampleHeroes, sampleMonsters } = require('./gameconstants');
 
 const gameRouter = express.Router();
 
@@ -70,5 +71,34 @@ gameRouter.get('/intro/', async (req,res) => {
         res.render('intro');
     }
 });
+
+//COMBAT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+router.get('/getheroes', (req, res)=>{
+    //  The game client expects an array, but our sampleHeroes are a JSON object.
+    //  It will be necessary to construct the array server-side.  Since
+    //  this is an example, the construction will be arbitrary.  In a full
+    //  game, you would be building this based on what the player(s) had
+    //  unlocked at that stage, based on their account information etc.
+
+    // RED TODO:
+    // 1.  Get player hero lineup
+
+
+    let party = [sampleHeroes.cloud, sampleHeroes.aeris]
+    res.send(party);
+});
+
+router.get('/getmonsters', (req, res)=>{
+
+    // RED STUDIO TODO:
+    // 1.  Look up what level the player is on
+    // 2.  Load up the monsters for that level
+
+    
+    let party = [sampleMonsters.fungus, sampleMonsters.fungus]
+    res.send(party);
+});
+
 
 module.exports = gameRouter;
