@@ -161,7 +161,7 @@ const heroSet = {
         max_mp: 400,
         speed: 12,
         color: 'gold',
-        img: '',
+        img: 'https://i.imgur.com/jxQRV4Q.png',
         type: 'Sapphire',
     },
     ChuckyCheese: {
@@ -183,7 +183,7 @@ const heroSet = {
         max_mp: 420,
         speed: 420,
         color: 'green',
-        img: '',
+        img: 'https://i.imgur.com/t7sF4PS.png',
         type: 'Aries',
     },
     TheColonel: {
@@ -194,7 +194,7 @@ const heroSet = {
         max_mp: 250,
         speed: 1,
         color: 'blue',
-        img: '',
+        img: 'https://i.imgur.com/yaPAZoa.png',
         type: 'Sheikh',
     },
     LilSoundcloud: {
@@ -205,7 +205,7 @@ const heroSet = {
         max_mp: 400,
         speed: 12,
         color: 'gold',
-        img: '',
+        img: 'https://i.imgur.com/M7d1N1K.png',
         type: 'Lotus',
     },
     Karen: {
