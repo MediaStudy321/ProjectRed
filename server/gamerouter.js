@@ -56,4 +56,8 @@ gameRouter.get('/battle/getmonsters', (req, res)=>{
  });
 
 
+gameRouter.get('/gacha/', (req, res)=>{
+    res.render('gacha')
+})
+
 module.exports = gameRouter;

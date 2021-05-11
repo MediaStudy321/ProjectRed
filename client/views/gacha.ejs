@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Rolls</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="gamestyle.css" />
+  <link rel="stylesheet" href="/gamestyle.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 </head>
@@ -19,12 +19,25 @@
   </div>
   <div id="divider"></div>
   <div id="rolls">
-    </div>
-  </div>
+    <button id="roll" onclick="abyss()">Abyssal Roll</button>
   </div>
   <div id="divider"></div>
 
+  <script>
+    let int = 0;
 
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+     return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function abyss() {
+      int = getRandomInt(1,heroSet.length);
+      var character = heroSet[int];
+      if ()
+    }
+    </script>
 </body>
 
 </html>
