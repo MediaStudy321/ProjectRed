@@ -61,7 +61,7 @@ gameRouter.get('/battle/getheroes', (req, res)=>{
     res.send(party);
  });
 
-gameRouter.get('/battle/getmonsters', (req, res)=>{
+gameRouter.get('/battle/getmonsters', async (req, res)=>{
     let progress = req.session.player.progress;
     if(level.includes(progress)){
         let level = levels[progress]
@@ -70,7 +70,8 @@ gameRouter.get('/battle/getmonsters', (req, res)=>{
     }
     else res.render('notification', {message: 'This level is not designed yet. Sorry :('}); 
  });
- 
+
+
  gameRouter.get('/party/getpartyheroes', (req, res)=>{
     let party = [heroSet.Ed]
     res.send(party);
