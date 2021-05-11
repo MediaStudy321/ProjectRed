@@ -161,7 +161,7 @@ const heroSet = {
         max_mp: 400,
         speed: 12,
         color: 'gold',
-        img: 'picture of hero',
+        img: '',
         type: 'Sapphire',
     },
     ChuckyCheese: {
@@ -194,7 +194,7 @@ const heroSet = {
         max_mp: 250,
         speed: 1,
         color: 'blue',
-        img: 'https://i.imgur.com/sEOYWsX.png',
+        img: '',
         type: 'Sheikh',
     },
     LilSoundcloud: {
@@ -205,7 +205,7 @@ const heroSet = {
         max_mp: 400,
         speed: 12,
         color: 'gold',
-        img: 'picture of hero',
+        img: '',
         type: 'Lotus',
     },
     Karen: {
