@@ -35,7 +35,7 @@ gameRouter.get('/battle/', (req, res)=>{
     res.render('battle')
 })
 
-gameRouter.post('/battle/victory', (req, res)=>{
+gameRouter.post('/battle/victory', async (req, res)=>{
     console.log(req.session);
     try {
         var playe = await player.findOne({user:req.session.userid});
