@@ -55,7 +55,7 @@ gameRouter.get('/battle/getmonsters', (req, res)=>{
  });
 
 
-gameRouter.get('/gacha/', (req, res)=>{
+gameRouter.get('/gacha/', async(req, res)=>{
     res.render('gacha')
 })
 

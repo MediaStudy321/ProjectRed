@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="/gamestyle.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -19,7 +22,7 @@
   </div>
   <div id="divider"></div>
   <div id="rolls">
-    <button id="roll" onclick="abyss()">Abyssal Roll</button>
+    <button onclick="abyss()">Abyssal Roll</button>
   </div>
   <div id="divider"></div>
 
@@ -32,10 +35,31 @@
      return Math.floor(Math.random() * (max - min) + min);
     }
 
-    function abyss() {
+    function roll(){
       int = getRandomInt(1,heroSet.length);
-      var character = heroSet[int];
-      if ()
+      return heroSet[int];
+    }
+
+    function abyss() {
+      console.log("yes");
+      var character = roll();
+      console.log(character);
+      while((player.characters).includes(character)){
+        character = roll();
+        console.log(character);
+
+      }
+      $.ajax({
+        url: 'roll/',
+        type: 'GET',
+        success: (response)=>{
+            console.log(response);
+            $('#rolls').html(response);
+        },
+        error: (e)=>{
+            console.log(e);
+        }
+    });
     }
     </script>
 </body>
