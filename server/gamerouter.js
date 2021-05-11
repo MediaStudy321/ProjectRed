@@ -41,7 +41,6 @@ gameRouter.post('/battle/victory', (req, res)=>{
     res.send('good job');
 })
 
-gameRouter.post('')
 //COMBAT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // TODO: Fetch based on 1) player heroes, 2) player progress through the game
 
