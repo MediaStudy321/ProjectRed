@@ -8,7 +8,7 @@ $(async ()=>{
                 type: 'GET',
                 success: (data) => {
                     party=data;
-                    partySetup(party);
+                    optionlist(party);
                 }
             });
         }
@@ -18,6 +18,7 @@ $(async ()=>{
         }
     }
 	//  Party SET-UP
+    function optionlist
     await load();
 
 })
