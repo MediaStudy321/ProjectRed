@@ -60,7 +60,8 @@ gameRouter.get('/battle/getheroes', (req, res)=>{
     let party = [heroSet.Ed]
     res.send(party);
  });
-
+ 
+//Not tested should populate monsters based on levelConstants
 gameRouter.get('/battle/getmonsters', async (req, res)=>{
     let progress = req.session.player.progress;
     if(level.includes(progress)){
@@ -71,14 +72,17 @@ gameRouter.get('/battle/getmonsters', async (req, res)=>{
     else res.render('notification', {message: 'This level is not designed yet. Sorry :('}); 
  });
 
-
+ gameRouter.get('/party/', async(req, res)=>{
+    res.render('party')
+});
  gameRouter.get('/party/getpartyheroes',async (req, res)=>{
     let character = req.session.player.characters;
+    console.log(character);
     res.send(character);
  });
 
 gameRouter.get('/gacha/', async(req, res)=>{
     res.render('gacha')
-})
+});
 
 module.exports = gameRouter;

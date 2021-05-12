@@ -373,3 +373,5 @@ $(async ()=>{
 	var battle = setInterval(frame, framedelay)
 
 })
+
+//Battle does not allow player to press attack button
