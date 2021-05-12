@@ -72,9 +72,9 @@ gameRouter.get('/battle/getmonsters', async (req, res)=>{
  });
 
 
- gameRouter.get('/party/getpartyheroes', (req, res)=>{
-    let party = [heroSet.Ed]
-    res.send(party);
+ gameRouter.get('/party/getpartyheroes',async (req, res)=>{
+    let character = req.session.player.characters;
+    res.send(character);
  });
 
 gameRouter.get('/gacha/', async(req, res)=>{
