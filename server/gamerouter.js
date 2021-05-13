@@ -91,6 +91,45 @@ gameRouter.get('/battle/getmonsters', (req, res)=>{
     res.send(character);
  });
 
+ gameRouter.get("/party/firstmem", async (req, res) => {
+   console.log(req.body);
+   try {
+     var playe = await player.findOne({ user: req.session.userid });
+     playe.party.first = req.body.character;
+     playe.save();
+     req.session.player = playe;
+   } catch (e) {
+     res.status(500);
+     console.log(e);
+   }
+ });
+ gameRouter.get("/party/secondmem", async (req, res) => {
+    console.log(req.body);
+    try {
+      var playe = await player.findOne({ user: req.session.userid });
+      playe.party.second = req.body.character;
+      playe.save();
+      req.session.player = playe;
+    } catch (e) {
+      res.status(500);
+      console.log(e);
+    }
+  });
+
+  gameRouter.get("/party/thirdmem", async (req, res) => {
+    console.log(req.body);
+    try {
+      var playe = await player.findOne({ user: req.session.userid });
+      playe.party.third = req.body.character;
+      playe.save();
+      req.session.player = playe;
+    } catch (e) {
+      res.status(500);
+      console.log(e);
+    }
+  });
+ 
+
 gameRouter.get('/gacha/', (req, res)=>{
     res.render('gacha')
 });

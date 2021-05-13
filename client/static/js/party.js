@@ -8,7 +8,7 @@ $(async ()=>{
                 type: 'GET',
                 success: (data) => {   //Needs Looking At Logs correctly in router but not in party.js code
                     party=data;
-                    optionList(party);
+                    displayControls();
                 }
             });
         }
@@ -18,34 +18,46 @@ $(async ()=>{
         }
     }
 
-    //populate three options with every character a player has.
-    function optionList(){
-    console.log("test");
-    $(party).each(function() {
-        var x = this;
-        $('#partySelect select[name=party-select]').append(
-            $('<option/>', {
-                value: x.name,
-                text: x.name,
-                id: x.id
-            })
-        );
-        $('#partySelect2 select[name=party-select2]').append(
-            $('<option/>', {
-                value: x.name,
-                text: x.name,
-                id: x.id
-            })
-        );
-        $('#partySelect3 select[name=party-select3]').append(
-            $('<option/>', {
-                value: x.name,
-                text: x.name,
-                id: x.id
-            })
-        );
-    });
-}
+    function optionString(){
+        var stringy="<form action='firstmem' method='POST'><label for='character'>Choose party member 1:</label><select id='character'>"
+      
+        for(i=0;i<party.length;i++){
+        stringy = stringy + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
+        }
+        stringy = stringy + "</select> <button type='submit'>Select 1</button></form>"
+        return stringy
+    }
+
+    function optionString2(){
+        var stringy2="<form action='secondmem' method='POST'><label for='character2'>Choose party member 2:</label><select id='character2'>"
+      
+        for(i=0;i<party.length;i++){
+        stringy2 = stringy2 + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
+        }
+        stringy2 = stringy2 + "</select> <button type='submit'>Select 2</button></form>"
+        return stringy2
+    }
+
+    function optionString3(){
+        var stringy3="<form action='thirdmem' method='POST'><label for='character3'>Choose party member 3:</label><select id='character3'>"
+      
+        for(i=0;i<party.length;i++){
+        stringy3 = stringy3 + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
+        }
+        stringy3 = stringy3 + "</select> <button type='submit'>Select 3</button></form>"
+        return stringy3
+    }
+
+    function displayControls(){
+        $('#banner').html("Create your party!");
+        $('#controls').html('');
+        optionString();
+        optionString2();
+        optionString3();
+        //Rolls
+        $('#controls').append(stringy + stringy2 + stringy3 + "<button id='confirm'>Confirm</button>");
+        }
+
 	//  Party SET-UP
       
     await load();
