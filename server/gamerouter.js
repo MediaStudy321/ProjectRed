@@ -98,11 +98,17 @@ gameRouter.get('/party/getpartyheroes',(req, res)=>{
   res.send(character);
 });
 
-gameRouter.get("/party/firstmem", async (req, res) => {
+gameRouter.post("/party/setparty", async (req, res) => {
   console.log(req.body);
   try {
+    partyAr=Object.values(req.body)
+    uniqueParty= new Set(partyAr)
+    let arr= Array.from(uniqueParty)
+    console.log(uniqueParty)
     var playe = await player.findOne({ user: req.session.userid });
-    playe.party.first = req.body.character;
+    playe.party.first = arr[0];
+    playe.party.second = arr[1];
+    playe.party.third = arr[2];
     playe.save();
     req.session.player = playe;
   } catch (e) {
@@ -111,31 +117,7 @@ gameRouter.get("/party/firstmem", async (req, res) => {
   }
 });
 
-gameRouter.get("/party/secondmem", async (req, res) => {
-  console.log(req.body);
-  try {
-    var playe = await player.findOne({ user: req.session.userid });
-    playe.party.second = req.body.character;
-    playe.save();
-    req.session.player = playe;
-  } catch (e) {
-    res.status(500);
-    console.log(e);
-  }
-});
 
-gameRouter.get("/party/thirdmem", async (req, res) => {
-  console.log(req.body);
-  try {
-    var playe = await player.findOne({ user: req.session.userid });
-    playe.party.third = req.body.character;
-    playe.save();
-    req.session.player = playe;
-  } catch (e) {
-    res.status(500);
-    console.log(e);
-  }
-});
 
 
 gameRouter.get('/gacha/', (req, res)=>{

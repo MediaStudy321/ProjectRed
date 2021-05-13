@@ -19,44 +19,21 @@ $(async ()=>{
     }
 
     function optionString(){
-        var stringy="<form action='firstmem' method='POST'><label for='character'>Choose party member 1:</label><select id='character'>"
-      
+        party=party[0]
+        var stringy=""
         for(i=0;i<party.length;i++){
         stringy = stringy + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
         }
-        stringy = stringy + "</select> <button type='submit'>Select 1</button></form>"
         console.log(stringy)
         return stringy
     }
 
-    function optionString2(){
-        var stringy2="<form action='secondmem' method='POST'><label for='character2'>Choose party member 2:</label><select id='character2'>"
-      
-        for(i=0;i<party.length;i++){
-        stringy2 = stringy2 + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
-        }
-        stringy2 = stringy2 + "</select> <button type='submit'>Select 2</button></form>"
-        return stringy2
-    }
-
-    function optionString3(){
-        var stringy3="<form action='thirdmem' method='POST'><label for='character3'>Choose party member 3:</label><select id='character3'>"
-      
-        for(i=0;i<party.length;i++){
-        stringy3 = stringy3 + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
-        }
-        stringy3 = stringy3 + "</select> <button type='submit'>Select 3</button></form>"
-        return stringy3
-    }
-
     function displayControls(){
-        $('#banner').html("Create your party!");//code seems to stop here ???
-        $('#controls').html('');
-        optionString();
-        optionString2();
-        optionString3();
+        stringy=optionString();
         //Rolls
-        $('#controls').append(stringy + stringy2 + stringy3 + "<button id='confirm'>Confirm</button>");
+        $('#firstmenu').append(stringy);
+        $('#secondmenu').append(stringy);
+        $('#thirdmenu').append(stringy);
         }
 
 	//  Party SET-UP
