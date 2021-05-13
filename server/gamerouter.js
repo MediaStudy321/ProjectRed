@@ -58,7 +58,11 @@ gameRouter.post('/battle/victory', async (req, res)=>{
 //waiting on party page <- to do game heros\
 
 gameRouter.get('/battle/getheroes', (req, res)=>{
-    let party = [heroSet.Ed]
+    let party = [];
+    let partynames = [req.session.player.party.first,req.session.player.party.second,req.session.player.party.third]
+    for(i=0;i,partynames.length;i++){
+        
+    }
     res.send(party);
  });
 
@@ -147,7 +151,7 @@ gameRouter.get('/gacha/getcharacters', (req, res)=>{
  });
 
  gameRouter.post('/gacha/heroPull', async (req, res)=>{
-    console.log("heroPull");
+    console.log(req.body.character);
     try {
         var playe = await player.findOne({user:req.session.userid});
         playe.characters.push(req.body.character);

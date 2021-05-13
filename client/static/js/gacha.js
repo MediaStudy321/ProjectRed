@@ -9,6 +9,7 @@ $(async ()=>{
                 success: (data) =>{
                     heroSet=data;
                     displayControls()
+                    console.log(heroSet[0])
                 }
             });
         }
@@ -19,8 +20,10 @@ $(async ()=>{
     }
 
     function randomHero() {
-		let choice=Math.floor(Math.random()*heroSet.length);
-		return heroSet[choice];
+		let choice=Math.floor(Math.random()*heroSet[0].length);
+        hero = heroSet[0][choice];
+        console.log(heroSet[0].length)
+        return(hero);
       }
 
     function displayControls(){
@@ -32,7 +35,7 @@ $(async ()=>{
         $('#abyssRoll').on('click', ()=>{
             randomHero(heroSet);
             $('#banner').html('You pulled'+ hero);
-            $('#controls').append("<button id='confirm'>Confirm</button>");
+            $('#controls').html("<button id='confirm'>Confirm</button>");
                 $('#confirm').on('click', ()=>{
                     console.log(hero)
                     $.ajax({
