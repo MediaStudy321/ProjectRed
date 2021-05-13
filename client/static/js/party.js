@@ -25,6 +25,7 @@ $(async ()=>{
         stringy = stringy + "<option value='"+ party[i]+"'>"+party[i]+"</option>"
         }
         stringy = stringy + "</select> <button type='submit'>Select 1</button></form>"
+        console.log(stringy)
         return stringy
     }
 
@@ -49,7 +50,7 @@ $(async ()=>{
     }
 
     function displayControls(){
-        $('#banner').html("Create your party!");
+        $('#banner').html("Create your party!");//code seems to stop here ???
         $('#controls').html('');
         optionString();
         optionString2();
