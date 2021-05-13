@@ -276,3 +276,11 @@ body {
        make sure you have an empty gif */
     background-image: url('empty.gif');
   }
+
+  #controls {
+    text-align: center;
+}
+
+#banner {
+  text-align: center;
+}

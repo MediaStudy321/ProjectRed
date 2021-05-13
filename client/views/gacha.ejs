@@ -15,53 +15,18 @@
 
   <div id="header">
     <div id="split">
-     <div id = "small"><div id = "center2"><h1 style="float:left; padding-top:12px; padding-left:15px;">Profile Name: no name</h1></div> </div>
-      <div id = "small"><div id = "center2"><h1 style="float:left; padding-top:12px;">Energy: 10/10</h1></div> </div>
-      <div id = "small"><div id = "center2"><h1 style="float:left; padding-top:12px; padding-right:15px;">Gold: broke</h1></div> </div>
+     <div id = "small"><h1 align="center" style="float:left; padding-top:12px; padding-left:15px;">Profile Name: no name</h1></div> </div>
+      <div id = "small"><h1 align="center" style="float:left; padding-top:12px;">Energy: 10/10</h1></div> </div>
+      <div id = "small"><h1 align="center" style="float:left; padding-top:12px; padding-right:15px;">Gold: broke</h1></div> </div>
     </div>
   </div>
   <div id="divider"></div>
   <div id="rolls">
-    <button onclick = "abyss()" align="center">Abyssal Roll</button>
+    <h1 id="banner" align="center"> </h1>
+    <div id="controls" align="center"></div>
   </div>
   <div id="divider"></div>
   <script src="/js/gacha.js"></script>
-  <script>
-    let int = 0;
-
-    function getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-     return Math.floor(Math.random() * (max - min) + min);
-    }
-
-    function roll(){
-      int = getRandomInt(1,heroSet.length);
-      return heroSet[int];
-    }
-
-    function abyss() {
-      console.log("yes");
-      var character = roll();
-      console.log(character);
-      while((player.characters).includes(character)){
-        character = roll();
-        console.log(character);
-
-      }
-      $.ajax({
-        url: 'roll/',
-        type: 'GET',
-        success: (response)=>{
-            console.log(response);
-            $('#rolls').html(response);
-        },
-        error: (e)=>{
-            console.log(e);
-        }
-    });
-    }
-    </script>
 </body>
 
 </html>
