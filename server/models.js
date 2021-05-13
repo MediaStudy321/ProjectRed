@@ -27,13 +27,16 @@ const playerSchema = new mongoose.Schema({
   },
   party:{
     first: {
-      type: String
+      type: String,
+      default:""
     },
     second: {
-      type: String
+      type: String,
+      default:""
     },
     third: {
-      type: String
+      type: String,
+      default:""
     }
   },
   characters: {

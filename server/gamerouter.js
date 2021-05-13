@@ -60,9 +60,14 @@ gameRouter.post('/battle/victory', async (req, res)=>{
 gameRouter.get('/battle/getheroes', (req, res)=>{
     let party = [];
     let partynames = [req.session.player.party.first,req.session.player.party.second,req.session.player.party.third]
-    for(i=0;i,partynames.length;i++){
-        
+    console.log(partynames);
+    for(i=0;i<partynames.length;i++){
+        if(heroSet[partynames[i]]){
+        console.log(partynames[i]);
+        party.push(heroSet[partynames[i]]);
+        }
     }
+    console.log(party);
     res.send(party);
  });
 
@@ -72,15 +77,12 @@ gameRouter.get('/battle/getmonsters', (req, res)=>{
     if(levels[progress]){
         var constparty = levels[progress]
         for(i=1;i<4;i++){
-            console.log(constparty["enemy"+i]);
             if(monsterSet[constparty["enemy"+i]]){
-                console.log(monsterSet[constparty["enemy"+i]])
                 party.push(monsterSet[constparty["enemy"+i]]);
             } else{
                console.log('error');
             }
         }
-        console.log(party);
         res.send(party);
        }
        else res.render('notification', {message: 'This level is not designed yet. Sorry :('}); 

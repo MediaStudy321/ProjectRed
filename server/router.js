@@ -20,6 +20,7 @@ requestRouter.post('/intro/begin', async (req,res) => {
     try {
         var playe = await player.findOne({user:req.session.userid});
         playe.characters.push(req.body.character);
+        playe.party.first=req.body.character;
         playe.progress=1;
         playe.save();
         req.session.player = playe;
