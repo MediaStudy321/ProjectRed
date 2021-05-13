@@ -137,25 +137,29 @@ gameRouter.get('/gacha/', (req, res)=>{
 });
 
 gameRouter.get('/gacha/reward', (req, res)=>{
-  let keySet = Object.keys(heroSet);
-  let key = Math.floor(Math.random()*keySet.length);
-  let hero = heroSet[keySet[key]];
-  res.send(hero);
+  player.findOne({user:req.session.userid}, (error, result)=>{
+    if(error) {
+      console.log(error)
+      res.status(500).send('ERROR');
+    }
+    else if(!result) {
+      console.log('Player not found')
+      res.status(404).send('Player not found');
+    }
+    else {
+      if(result.rolls>0) {
+        let allKeys = Object.keys(heroSet);
+        let keySet = allKeys.filter(n => !result.characters.includes(n));
+        console.log(keySet)
+        let n = Math.floor(Math.random()*keySet.length);
+        result.characters.push(keySet[n]);
+        result.rolls--;
+        result.save();
+        res.send(heroSet[keySet[n]]);
+      }
+      else res.send('NO MORE');
+    }
+  })
 });
-
-gameRouter.post('/gacha/heroPull', async (req, res)=>{
-  console.log("heroPull");
-  try {
-      var playe = await player.findOne({user:req.session.userid});
-      playe.characters.push(req.body.character);
-      playe.save();
-      req.session.player = playe;
-  }
-  catch (e) {
-      res.status(500);
-      console.log(e);
-  }
-})
-
 
 module.exports = gameRouter;
