@@ -135,6 +135,7 @@ $(async ()=>{
             case 'defeat':
                 window.alert('You lose!');
                 clearInterval(battle);
+                window.location="/game/"
                 break;
         }
         frames++;
