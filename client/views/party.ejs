@@ -21,9 +21,14 @@
     </div>
   </div>
   <div id="divider"></div>
-  <div id="rolls">
-    <h1 id="banner" align="center"> </h1>
-    <div id="controls" align="center"></div>
+  <div id="content">
+    <h1 id="banner" align="center">Choose your party</h1>
+    <form action="setparty" method="POST">
+      <label for='first'>First position:</label> <select id='firstmenu' name='first'></select>
+      <label for='second'>Second position:</label> <select id='secondmenu' name='second'></select>
+      <label for='third'>Third position:</label> <select id='thirdmenu' name='third'></select>
+      <button type="submit">Okay!</button>
+    </form>
   </div>
   <div id="divider"></div>
   <script src="/js/party.js"></script>
