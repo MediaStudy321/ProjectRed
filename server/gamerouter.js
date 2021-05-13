@@ -62,19 +62,27 @@ gameRouter.get('/battle/getheroes', (req, res)=>{
     res.send(party);
  });
 
-//Not tested should populate monsters based on levelConstants
+//need to figure out a way to loop through monsterSet and pull the same monster from level constants
 gameRouter.get('/battle/getmonsters', (req, res)=>{
+    let party = [];
     let progress = req.session.player.progress;
-    let fight = [levels]
-    console.log(fight[progress]);
-    if(fight.includes(progress)){
-        let level = fight[progress]
-        console.log(level)
-        let party = [level.enemy1, level.enemy2, level.enemy3];
+    if(levels[progress]){
+        let constparty = levels[progress]
+        for(i=0;i<constparty.length; i++){
+            let enemy = ("enemy"+i)
+            console.log(constparty[i])
+            if(monsterSet.includes(constparty[i])){
+                console.log(array.indexOf(constparty[i]));
+                party.push(array.indexOf(constparty[i]));
+            }else{
+                res.render('notification', {message: 'This level includes a monster that does not exist'});
+            }
+        }
         res.send(party);
-    }
-    else res.render('notification', {message: 'This level is not designed yet. Sorry :('}); 
- });
+       }
+       else res.render('notification', {message: 'This level is not designed yet. Sorry :('}); 
+    });
+
 
  gameRouter.get('/party/',(req, res)=>{
     res.render('party')
