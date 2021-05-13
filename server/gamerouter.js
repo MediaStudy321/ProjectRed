@@ -83,81 +83,78 @@ gameRouter.get('/battle/getmonsters', (req, res)=>{
     });
 
 
- gameRouter.get('/party/',(req, res)=>{
-    res.render('party')
+gameRouter.get('/party/',(req, res)=>{
+  res.render('party')
 });
- gameRouter.get('/party/getpartyheroes',(req, res)=>{
-    let character = [req.session.player.characters];
-    res.send(character);
- });
 
- gameRouter.get("/party/firstmem", async (req, res) => {
-   console.log(req.body);
-   try {
-     var playe = await player.findOne({ user: req.session.userid });
-     playe.party.first = req.body.character;
-     playe.save();
-     req.session.player = playe;
-   } catch (e) {
-     res.status(500);
-     console.log(e);
-   }
- });
- gameRouter.get("/party/secondmem", async (req, res) => {
-    console.log(req.body);
-    try {
-      var playe = await player.findOne({ user: req.session.userid });
-      playe.party.second = req.body.character;
-      playe.save();
-      req.session.player = playe;
-    } catch (e) {
-      res.status(500);
-      console.log(e);
-    }
-  });
+gameRouter.get('/party/getpartyheroes',(req, res)=>{
+  let character = [req.session.player.characters];
+  res.send(character);
+});
 
-  gameRouter.get("/party/thirdmem", async (req, res) => {
-    console.log(req.body);
-    try {
-      var playe = await player.findOne({ user: req.session.userid });
-      playe.party.third = req.body.character;
-      playe.save();
-      req.session.player = playe;
-    } catch (e) {
-      res.status(500);
-      console.log(e);
-    }
-  });
- 
+gameRouter.get("/party/firstmem", async (req, res) => {
+  console.log(req.body);
+  try {
+    var playe = await player.findOne({ user: req.session.userid });
+    playe.party.first = req.body.character;
+    playe.save();
+    req.session.player = playe;
+  } catch (e) {
+    res.status(500);
+    console.log(e);
+  }
+});
+
+gameRouter.get("/party/secondmem", async (req, res) => {
+  console.log(req.body);
+  try {
+    var playe = await player.findOne({ user: req.session.userid });
+    playe.party.second = req.body.character;
+    playe.save();
+    req.session.player = playe;
+  } catch (e) {
+    res.status(500);
+    console.log(e);
+  }
+});
+
+gameRouter.get("/party/thirdmem", async (req, res) => {
+  console.log(req.body);
+  try {
+    var playe = await player.findOne({ user: req.session.userid });
+    playe.party.third = req.body.character;
+    playe.save();
+    req.session.player = playe;
+  } catch (e) {
+    res.status(500);
+    console.log(e);
+  }
+});
+
 
 gameRouter.get('/gacha/', (req, res)=>{
-    res.render('gacha')
+  res.render('gacha')
 });
 
-gameRouter.get('/gacha/getcharacters', (req, res)=>{
-    console.log("getChar");
-    let character = [req.session.player.characters];
-    console.log(character);
-    res.send(character);
- });
+gameRouter.get('/gacha/reward', (req, res)=>{
+  let keySet = Object.keys(heroSet);
+  let key = Math.floor(Math.random()*keySet.length);
+  let hero = heroSet[keySet[key]];
+  res.send(hero);
+});
 
- gameRouter.get('/gacha/getallheroes', (req, res)=>{
-    let heroes = [heroSet]
-    res.send(heroes);
- });
-
- gameRouter.post('/gacha/heroPull', async (req, res)=>{
-    console.log("heroPull");
-    try {
-        var playe = await player.findOne({user:req.session.userid});
-        playe.characters.push(req.body.character);
-        playe.save();
-        req.session.player = playe;
-    }
-    catch (e) {
-        res.status(500);
-        console.log(e);
-    }
+gameRouter.post('/gacha/heroPull', async (req, res)=>{
+  console.log("heroPull");
+  try {
+      var playe = await player.findOne({user:req.session.userid});
+      playe.characters.push(req.body.character);
+      playe.save();
+      req.session.player = playe;
+  }
+  catch (e) {
+      res.status(500);
+      console.log(e);
+  }
 })
 
 
