@@ -359,6 +359,10 @@ $(async ()=>{
                 $('#attackbutton').on('click', displayControls(hero));
                 $('#banner').html("Choose who to attack!");
                 $('#attackbutton').html('cancel attack')
+                $('#attackbutton').on('click', ()=>{
+                    $('#banner').html("Attack Cancelled!");
+                    displayControls(hero);
+                })
             }
 
         })
