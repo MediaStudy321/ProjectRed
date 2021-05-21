@@ -15,7 +15,12 @@ $(async ()=>{
                      type: "GET",
                      url: "reward",
                      success: (data) => {
-                         $('#banner').html("You rolled " + data.name);
+                        if(data.name){
+                            $('#banner').html("You rolled " + data.name);
+                         } else{
+                            $('#banner').html("You are out of rolls");
+                         }
+                         
                         }
                     });
             });
