@@ -357,6 +357,7 @@ $(async ()=>{
                     $('#controls').html('');
                 });
                 $('#attackbutton').on('click', displayControls(hero));
+                $('#banner').html("Choose who to attack!");
                 $('#attackbutton').html('cancel attack')
             }
 
